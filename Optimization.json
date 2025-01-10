@@ -1,0 +1,229 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "n_1",
+      "position": {
+        "x": 1.000002507920243,
+        "y": 325.0000117146274
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Load",
+        "widgets": [
+          {
+            "type": "file_selector",
+            "label": "Molecule File",
+            "value": ""
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Structure"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            false
+          ]
+        },
+        "category": "Load"
+      },
+      "measured": {
+        "width": 184,
+        "height": 170
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "2",
+      "type": "n_101",
+      "position": {
+        "x": 323.34868410881694,
+        "y": 194.66819620541804
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Structure Optimization",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "selector",
+            "label": "Converge",
+            "options": [
+              "Normal",
+              "Tight",
+              "Loose"
+            ],
+            "value": "Normal"
+          },
+          {
+            "optionId": 1,
+            "type": "selector",
+            "label": "Algorithms ",
+            "options": [
+              "BFGS",
+              "LBFGS",
+              "GPMin"
+            ],
+            "value": "BFGS"
+          },
+          {
+            "optionId": 2,
+            "type": "check_box",
+            "label": "PBC",
+            "value": false
+          }
+        ],
+        "connections": {
+          "input": [
+            "Engine",
+            "Structure"
+          ],
+          "output": [
+            "Results"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0,
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            "Normal",
+            "BFGS",
+            false
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 235,
+        "height": 232
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "3",
+      "type": "n_5002",
+      "position": {
+        "x": 874.0000002639916,
+        "y": -60.000013859559274
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Trajectory Preview",
+        "widgets": [
+          {
+            "type": "visualization",
+            "label": "Molecules:",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Structure"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Visualization"
+      },
+      "measured": {
+        "width": 300,
+        "height": 320
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "4",
+      "type": "n_3001",
+      "position": {
+        "x": 751.9999882523736,
+        "y": 361.99998627243644
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Optimization Result",
+        "widgets": [
+          {
+            "type": "3dmol",
+            "label": "Molecules:",
+            "value": "0"
+          },
+          {
+            "type": "images",
+            "label": "Energy",
+            "image": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Results"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Result"
+      },
+      "measured": {
+        "width": 400,
+        "height": 360
+      },
+      "selected": true,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "sourceHandle": "Structure",
+      "target": "2",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__1Structure-2Structure"
+    },
+    {
+      "source": "2",
+      "sourceHandle": "Results",
+      "target": "3",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__2Results-3Structure"
+    },
+    {
+      "source": "2",
+      "sourceHandle": "Results",
+      "target": "4",
+      "targetHandle": "Results",
+      "type": "button",
+      "id": "xy-edge__2Results-4Results"
+    }
+  ],
+  "viewport": {
+    "x": 298.07011245606276,
+    "y": 87.36905356106794,
+    "zoom": 0.6597539205525479
+  }
+}

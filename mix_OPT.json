@@ -1,0 +1,375 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "n_1",
+      "position": {
+        "x": 76.81682235259937,
+        "y": 271.375209962593
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Load",
+        "widgets": [
+          {
+            "type": "file_selector",
+            "label": "Molecule File",
+            "value": ""
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Structure"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            false
+          ]
+        },
+        "category": "Load"
+      },
+      "measured": {
+        "width": 184,
+        "height": 170
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "2",
+      "type": "n_1",
+      "position": {
+        "x": 90,
+        "y": 60
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Load",
+        "widgets": [
+          {
+            "type": "file_selector",
+            "label": "Molecule File",
+            "value": ""
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Structure"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            false
+          ]
+        },
+        "category": "Load"
+      },
+      "measured": {
+        "width": 184,
+        "height": 170
+      }
+    },
+    {
+      "id": "3",
+      "type": "n_103",
+      "position": {
+        "x": 416.9999994060189,
+        "y": 225.00000098996856
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Mix",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "text_input",
+            "label": "Number of structure 1",
+            "value": "3"
+          },
+          {
+            "optionId": 1,
+            "type": "text_input",
+            "label": "Number of structure 2",
+            "value": "3"
+          },
+          {
+            "optionId": 2,
+            "type": "text_input",
+            "label": "Boxsize",
+            "value": "20 20 20"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Structure1",
+            "Structure2"
+          ],
+          "output": [
+            "Results"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0,
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            "3",
+            "3",
+            "20 20 20"
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 235,
+        "height": 252
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "4",
+      "type": "n_101",
+      "position": {
+        "x": 786.0000096026946,
+        "y": 178.99999897703253
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Structure Optimization",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "selector",
+            "label": "Converge",
+            "options": [
+              "Normal",
+              "Tight",
+              "Loose"
+            ],
+            "value": "Loose"
+          },
+          {
+            "optionId": 1,
+            "type": "selector",
+            "label": "Algorithms ",
+            "options": [
+              "BFGS",
+              "LBFGS",
+              "GPMin"
+            ],
+            "value": "BFGS"
+          },
+          {
+            "optionId": 2,
+            "type": "check_box",
+            "label": "PBC",
+            "value": false
+          }
+        ],
+        "connections": {
+          "input": [
+            "Engine",
+            "Structure"
+          ],
+          "output": [
+            "Results"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0,
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            "Loose",
+            "BFGS",
+            false
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 235,
+        "height": 232
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "5",
+      "type": "n_1002",
+      "position": {
+        "x": 437.9999971290913,
+        "y": -102.74101212573031
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Semiempirical",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "selector",
+            "label": "Software ",
+            "options": [
+              "DFTB+",
+              "xTB"
+            ],
+            "value": "xTB"
+          },
+          {
+            "optionId": 1,
+            "type": "text_input",
+            "label": "Electron Temp. (K)",
+            "value": "300"
+          },
+          {
+            "optionId": 2,
+            "type": "text_input",
+            "label": "Spin Multiplicity",
+            "value": "1"
+          },
+          {
+            "optionId": 3,
+            "type": "text_input",
+            "label": "Charge",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Engine"
+          ]
+        },
+        "node_data": {
+          "output": [
+            0
+          ],
+          "options": [
+            "xTB",
+            "300",
+            "1",
+            "0"
+          ]
+        },
+        "category": "Engine"
+      },
+      "measured": {
+        "width": 235,
+        "height": 272
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "6",
+      "type": "n_3001",
+      "position": {
+        "x": 1110,
+        "y": 240
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Optimization Result",
+        "widgets": [
+          {
+            "type": "3dmol",
+            "label": "Molecules:",
+            "value": "0"
+          },
+          {
+            "type": "images",
+            "label": "Energy",
+            "image": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Results"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Result"
+      },
+      "measured": {
+        "width": 400,
+        "height": 360
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "sourceHandle": "Structure",
+      "target": "3",
+      "targetHandle": "Structure1",
+      "type": "button",
+      "id": "xy-edge__2Structure-3Structure1"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "Structure",
+      "target": "3",
+      "targetHandle": "Structure2",
+      "type": "button",
+      "id": "xy-edge__1Structure-3Structure2"
+    },
+    {
+      "source": "3",
+      "sourceHandle": "Results",
+      "target": "4",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__3Results-4Structure"
+    },
+    {
+      "source": "5",
+      "sourceHandle": "Engine",
+      "target": "4",
+      "targetHandle": "Engine",
+      "type": "button",
+      "id": "xy-edge__5Engine-4Engine"
+    },
+    {
+      "source": "4",
+      "sourceHandle": "Results",
+      "target": "6",
+      "targetHandle": "Results",
+      "type": "button",
+      "id": "xy-edge__4Results-6Results"
+    }
+  ],
+  "viewport": {
+    "x": 24.108916731464717,
+    "y": 131.55811159841886,
+    "zoom": 0.8705505288234195
+  }
+}

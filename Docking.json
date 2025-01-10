@@ -1,0 +1,492 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "n_1",
+      "position": {
+        "x": 1.000002507920243,
+        "y": 325.0000117146274
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Load",
+        "widgets": [
+          {
+            "type": "file_selector",
+            "label": "Molecule File",
+            "value": ""
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Structure"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            false
+          ]
+        },
+        "category": "Load"
+      },
+      "measured": {
+        "width": 184,
+        "height": 170
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "2",
+      "type": "n_101",
+      "position": {
+        "x": 323.34868410881694,
+        "y": 194.66819620541804
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Structure Optimization",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "selector",
+            "label": "Converge",
+            "options": [
+              "Normal",
+              "Tight",
+              "Loose"
+            ],
+            "value": "Normal"
+          },
+          {
+            "optionId": 1,
+            "type": "selector",
+            "label": "Algorithms ",
+            "options": [
+              "BFGS",
+              "LBFGS",
+              "GPMin"
+            ],
+            "value": "BFGS"
+          },
+          {
+            "optionId": 2,
+            "type": "check_box",
+            "label": "PBC",
+            "value": false
+          }
+        ],
+        "connections": {
+          "input": [
+            "Engine",
+            "Structure"
+          ],
+          "output": [
+            "Results"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0,
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            "Normal",
+            "BFGS",
+            false
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 235,
+        "height": 232
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "3",
+      "type": "n_102",
+      "position": {
+        "x": 632.0000030359034,
+        "y": 64.99999868004195
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Docking",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "text_input",
+            "label": "Binding location",
+            "value": "all"
+          },
+          {
+            "optionId": 1,
+            "type": "selector",
+            "label": "Software ",
+            "options": [
+              "Autodock Vina"
+            ],
+            "value": "Autodock Vina"
+          },
+          {
+            "optionId": 2,
+            "type": "selector",
+            "label": "Partical Charge ",
+            "options": [
+              "mmff94",
+              "eem",
+              "qeq",
+              "qtpie"
+            ],
+            "value": "mmff94"
+          },
+          {
+            "optionId": 3,
+            "type": "text_input",
+            "label": "Number of results",
+            "value": "5"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Protein",
+            "Ligant"
+          ],
+          "output": [
+            "Results"
+          ]
+        },
+        "node_data": {
+          "input": [
+            0,
+            0
+          ],
+          "output": [
+            0
+          ],
+          "options": [
+            "all",
+            "Autodock Vina",
+            "mmff94",
+            "5"
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 235,
+        "height": 292
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "4",
+      "type": "n_104",
+      "position": {
+        "x": 222.14130464176992,
+        "y": -137.36099659613677
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "ESMfold",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "text_area",
+            "label": "sequence",
+            "value": ""
+          },
+          {
+            "optionId": 1,
+            "type": "text_input",
+            "label": "pH",
+            "value": "7.0"
+          },
+          {
+            "optionId": 2,
+            "type": "check_box",
+            "label": "Add Hydrogen",
+            "value": false
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Structure"
+          ]
+        },
+        "node_data": {
+          "output": [
+            0
+          ],
+          "options": [
+            0,
+            0,
+            0
+          ]
+        },
+        "category": "Computation"
+      },
+      "measured": {
+        "width": 355,
+        "height": 286
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "5",
+      "type": "n_1002",
+      "position": {
+        "x": -116.00000481784677,
+        "y": 19.99999670010496
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Semiempirical",
+        "widgets": [
+          {
+            "optionId": 0,
+            "type": "selector",
+            "label": "Software ",
+            "options": [
+              "DFTB+",
+              "xTB"
+            ],
+            "value": "xTB"
+          },
+          {
+            "optionId": 1,
+            "type": "text_input",
+            "label": "Electron Temp. (K)",
+            "value": "500"
+          },
+          {
+            "optionId": 2,
+            "type": "text_input",
+            "label": "Spin Multiplicity",
+            "value": "1"
+          },
+          {
+            "optionId": 3,
+            "type": "text_input",
+            "label": "Charge",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [],
+          "output": [
+            "Engine"
+          ]
+        },
+        "node_data": {
+          "output": [
+            0
+          ],
+          "options": [
+            "xTB",
+            "500",
+            "1",
+            "0"
+          ]
+        },
+        "category": "Engine"
+      },
+      "measured": {
+        "width": 235,
+        "height": 272
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "6",
+      "type": "n_3002",
+      "position": {
+        "x": 1006.0000010559665,
+        "y": 278.0000124076055
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Docking Result",
+        "widgets": [
+          {
+            "type": "molstar-simple",
+            "label": "Molecules:",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Results"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Result"
+      },
+      "measured": {
+        "width": 400,
+        "height": 490
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "7",
+      "type": "n_5001",
+      "position": {
+        "x": 616.5232388636578,
+        "y": 474.69683881845754
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Molecule Preview",
+        "widgets": [
+          {
+            "type": "visualization",
+            "label": "Molecules:",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Structure"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Visualization"
+      },
+      "measured": {
+        "width": 300,
+        "height": 320
+      },
+      "selected": true,
+      "dragging": false
+    },
+    {
+      "id": "8",
+      "type": "n_5003",
+      "position": {
+        "x": 1035.0000059398112,
+        "y": -318.0000031678993
+      },
+      "dragHandle": ".custom-drag-handle",
+      "data": {
+        "title": "Protein Preview",
+        "widgets": [
+          {
+            "type": "molstar-simple",
+            "label": "Molecules:",
+            "value": "0"
+          }
+        ],
+        "connections": {
+          "input": [
+            "Structure"
+          ],
+          "output": []
+        },
+        "node_data": {
+          "input": [
+            0
+          ]
+        },
+        "category": "Visualization"
+      },
+      "measured": {
+        "width": 400,
+        "height": 490
+      },
+      "selected": false,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "sourceHandle": "Results",
+      "target": "3",
+      "targetHandle": "Ligant",
+      "type": "button",
+      "id": "xy-edge__2Results-3Ligant"
+    },
+    {
+      "source": "4",
+      "sourceHandle": "Structure",
+      "target": "3",
+      "targetHandle": "Protein",
+      "type": "button",
+      "id": "xy-edge__4Structure-3Protein"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "Structure",
+      "target": "2",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__1Structure-2Structure"
+    },
+    {
+      "source": "5",
+      "sourceHandle": "Engine",
+      "target": "2",
+      "targetHandle": "Engine",
+      "type": "button",
+      "id": "xy-edge__5Engine-2Engine"
+    },
+    {
+      "source": "3",
+      "sourceHandle": "Results",
+      "target": "6",
+      "targetHandle": "Results",
+      "type": "button",
+      "id": "xy-edge__3Results-6Results"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "Structure",
+      "target": "7",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__1Structure-7Structure"
+    },
+    {
+      "source": "4",
+      "sourceHandle": "Structure",
+      "target": "8",
+      "targetHandle": "Structure",
+      "type": "button",
+      "id": "xy-edge__4Structure-8Structure"
+    }
+  ],
+  "viewport": {
+    "x": 300.37546342304825,
+    "y": 194.57588713049714,
+    "zoom": 0.4999999670010515
+  }
+}
